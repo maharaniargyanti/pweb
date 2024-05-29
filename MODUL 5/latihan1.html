@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sembunyikan dan Tampilkan Gambar</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      .image-container {
+        margin-top: 20px;
+      }
+
+      .image-container img {
+        display: none;
+        max-width: 100%;
+        height: auto;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sembunyikan dan Tampilkan Gambar</h1>
+    <button onclick="showImages()">Tampilkan Gambar</button>
+    <button onclick="hideImages()">Sembunyikan Gambar</button>
+    <div class="image-container">
+      <img src="images/gambar1.jpeg" alt="Gambar 1" />
+      <img src="images/gambar2.jpg" alt="Gambar 2" />
+      <img src="images/gambar3.jpeg" alt="Gambar 3" />
+    </div>
+    <script>
+      function showImages() {
+        const images = document.querySelectorAll(".image-container img");
+        images.forEach((image) => {
+          image.style.display = "block";
+        });
+      }
+
+      function hideImages() {
+        const images = document.querySelectorAll(".image-container img");
+        images.forEach((image) => {
+          image.style.display = "none";
+        });
+      }
+    </script>
+  </body>
+</html>

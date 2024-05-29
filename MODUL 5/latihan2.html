@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Double Click Change Color</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightgray;
+        margin: 10px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+      // Function to generate a random color
+      function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      // Select all boxes
+      const boxes = document.querySelectorAll(".box");
+
+      // Add double-click event listener to each box
+      boxes.forEach((box) => {
+        box.addEventListener("dblclick", function () {
+          box.style.backgroundColor = getRandomColor();
+        });
+      });
+    </script>
+  </body>
+</html>

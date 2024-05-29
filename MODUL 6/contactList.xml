@@ -1,0 +1,10 @@
+<xml id="contactList">
+    <contact>
+        <nama>Maharani Argyanti Nurahman</nama>
+        <alamat>Perum Mega Mutiara Tasik Regency </alamat>
+        <phone type="mobile">0831 4567 3235</phone>
+        <phone type="home">0896 0206 2964</phone>
+        <phone type="office">0858 7829 7928</phone>
+        <email>maharaniargyanti898@gmail.com</email>
+    </contact>
+</xml>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fade Effects</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+        margin: 20px auto;
+        display: block;
+      }
+      .container {
+        text-align: center;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+      <button id="fadeInBtn">Fade In</button>
+      <button id="fadeOutBtn">Fade Out</button>
+      <button id="fadeToBtn">Fade to 0.3</button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#fadeInBtn").click(function () {
+          $(".box").fadeIn(500); // Fade in the box over 0.5 seconds
+        });
+
+        $("#fadeOutBtn").click(function () {
+          $(".box").fadeOut(500); // Fade out the box over 0.5 seconds
+        });
+
+        $("#fadeToBtn").click(function () {
+          $(".box").fadeTo(500, 0.3); // Fade the box to opacity 0.3 over 0.5 seconds
+        });
+      });
+    </script>
+  </body>
+</html>

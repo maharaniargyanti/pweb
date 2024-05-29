@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Sederhana</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        background-color: #f0f0f0;
+      }
+      .calculator {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+      }
+      input[type="text"] {
+        width: 120px;
+        padding: 10px;
+        margin: 5px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Kalkulator</h1>
+    <div class="calculator">
+      <form>
+        <input type="text" id="bil1" placeholder="Bil 1" />
+        <input type="text" id="bil2" placeholder="Bil 2" />
+        <br />
+        <button type="button" onclick="calculate('+')">+</button>
+        <button type="button" onclick="calculate('-')">-</button>
+        <button type="button" onclick="calculate('*')">x</button>
+        <button type="button" onclick="calculate('/')">/</button>
+        <br />
+        <input type="text" id="hasil" placeholder="Hasil" readonly />
+      </form>
+    </div>
+    <script type="text/javascript">
+      function calculate(operation) {
+        var bil1 = parseFloat(document.getElementById("bil1").value);
+        var bil2 = parseFloat(document.getElementById("bil2").value);
+        var hasil = 0;
+
+        if (isNaN(bil1) || isNaN(bil2)) {
+          alert("Mohon masukkan angka yang valid.");
+          return;
+        }
+
+        switch (operation) {
+          case "+":
+            hasil = bil1 + bil2;
+            break;
+          case "-":
+            hasil = bil1 - bil2;
+            break;
+          case "*":
+            hasil = bil1 * bil2;
+            break;
+          case "/":
+            if (bil2 !== 0) {
+              hasil = bil1 / bil2;
+            } else {
+              alert("Pembagian dengan nol tidak diperbolehkan.");
+              return;
+            }
+            break;
+          default:
+            alert("Operasi tidak valid.");
+            return;
+        }
+
+        document.getElementById("hasil").value = hasil;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+var xmlhttp = false; try { xmlhttp = new ActiveXObject("Msxm12.XMLHttp"); }
+catch (e) { try { xmlhttp = new ActiveXObject("Microsoft.XMLHttp"); } catch (E)
+{ xmlhttp = false; } } if (!xmlhttp && typeof XMLHttpRequest != 'undefined') {
+xmlhttp = new XMLHttpRequest(); } if (!xmlhttp) { alert('Telah terjadi kesalahan
+saat pembuatan XMLHttpRequest object!') } return xmlhttp;
